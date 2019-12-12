@@ -16,10 +16,17 @@ namespace noocyte.Waithook_SignalR.Web
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services, IWebHostEnvironment env)
         {
             services.AddControllers();
-            services.AddSignalR();
+            if (env.IsDevelopment())
+            {
+                services.AddSignalR();
+            }
+            else
+            {
+                services.AddSignalR().AddAzureSignalR(); // Azure:SignalR:ConnectionString
+            }
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
