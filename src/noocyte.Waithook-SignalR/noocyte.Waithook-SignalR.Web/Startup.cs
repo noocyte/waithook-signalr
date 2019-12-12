@@ -16,10 +16,11 @@ namespace noocyte.Waithook_SignalR.Web
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services, IWebHostEnvironment env)
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            if (env.IsDevelopment())
+            var env = Configuration.GetValue<string>("ASPNETCORE_ENVIRONMENT");
+            if (env.Equals("development", StringComparison.OrdinalIgnoreCase))
             {
                 services.AddSignalR();
             }
