@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+using System;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +20,7 @@ namespace noocyte.Waithook_SignalR.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
             var env = Configuration.GetValue<string>("ASPNETCORE_ENVIRONMENT");
             if (env.Equals("development", StringComparison.OrdinalIgnoreCase))
             {
