@@ -4,7 +4,6 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <RootNamespace>noocyte.Waithook_SignalR.Web</RootNamespace>
     <UserSecretsId>9fae10fd-0797-42d4-8618-5fc8142febdf</UserSecretsId>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
